@@ -1,0 +1,9 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine on
+    RewriteBase /nanodesk/
+    DirectoryIndex index.php
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ /nanodesk/index.php?page=$1 [L,QSA]
+    Options -Indexes
+</IfModule>
